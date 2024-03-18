@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Banking</title>
+</head>
+<body>
+    <h1>Banking System</h1>
+    <form id="accountform">
+        <input type="text" placeholder="Name" id="customerName"><br><br>
+        <input type="number" placeholder="Balance" id="balance">
+        <button>Create Account</button>
+    </form>
+
+    <hr>
+
+    <form id="depositeform">
+        <input type="number" placeholder="Account Number" id="AccountNumber"><br><br>
+        <input type="number" placeholder="Amount" id="Amount">
+        <button>Deposit</button>
+    </form>
+    
+    <script>
+        function BankAccount(customername, balance = 0) {
+            this.name = customername;
+            this.balance = balance;
+            this.AccountNumber = Date.now();
+            this.Deposite = (amount) => {
+                this.balance += amount;
+            };
+            this.withdraw = (amount) => {
+                this.balance -= amount;
+            };
+        }
+
+        const accounts = [];
+        const accountform = document.getElementById("accountform");
+        const name = document.getElementById("customerName");
+        const Balance = document.getElementById("balance");
+        const depositeform = document.getElementById("depositeform");
+        const accountnumber = document.getElementById("AccountNumber");
+        const amount = document.getElementById("Amount");
+
+        accountform.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const account = new BankAccount(name.value, +Balance.value);
+            accounts.push(account);
+            console.log(accounts);
+        });
+
+        depositeform.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const account = accounts.find(account => account.AccountNumber === +accountnumber.value);
+            account.Deposite(+amount.value);
+            console.log(accounts);
+        });
+    </script>
+</body>
+</html>

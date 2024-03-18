@@ -1,0 +1,23 @@
+<!-- 1 kilometers=0.621371
+miles=kilometers*factor -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>convert kilometers to miles</title>
+    <script>
+        function convert() {
+            var kms=document.getElementById('kilometers').value;
+            const factor=0.621371;
+            var miles=kms*factor;
+            document.getElementById('result').innerText=`${miles} Miles`;
+        }
+    </script>
+</head>
+<body>
+    <input type="number" id="kilometers">
+    <button onclick="convert()">convert</button>
+    <p id="result"></p>
+</body>
+</html>

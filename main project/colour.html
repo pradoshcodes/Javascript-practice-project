@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Scheme Switch</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <style>
+        /* Define your different color schemes */
+        body {
+            transition: background-color 0.3s ease;
+        }
+
+         .Primary-theme{
+            background-color: blue;
+            
+        }
+
+        .Success-theme {
+            background-color: green;
+            
+        }
+
+        .danger-theme {
+            background-color: red;
+           
+        }
+
+        .Warning-theme {
+            background-color: #f1c40f;
+           
+            
+        } 
+        
+        /* .Info-theme {
+            background-color: skyblue;
+           
+            
+        }  */
+        
+    </style>
+</head>
+
+<body> <!-- Default color scheme -->
+
+    <h1>Color Scheme Switch</h1>
+    <!-- <span class="button" id="grey">Grey</span>
+    <span class="button" id="white">White</span>
+    <span class="button" id="blue">Blue</span>
+    <span class="button" id="yellow">Yellow</span> -->
+
+    <button type="button" class="btn btn-outline-primary" id="Primary">Primary</button>
+<button type="button" class="btn btn-outline-success" id="Success">Success</button>
+<button type="button" class="btn btn-outline-danger" id="danger">Danger</button>
+<button type="button" class="btn btn-outline-warning" id="Warning">Warning</button>
+<!-- <button type="button" class="btn btn-outline-info" id="Info">Info</button> -->
+
+
+
+    <script>
+        // Function to switch color schemes based on button clicks
+        function switchColorScheme(themes) {
+            document.body.className = themes;
+        } 
+
+        // Event listeners for color scheme buttons
+        document.getElementById("Primary").addEventListener("click", function() {
+            switchColorScheme("Primary-theme");
+        });
+
+        document.getElementById("Success").addEventListener("click", function() {
+            switchColorScheme("Success-theme");
+        });
+
+        document.getElementById("danger").addEventListener("click", function() {
+            switchColorScheme("danger-theme");
+        });
+
+        document.getElementById("Warning").addEventListener("click", function() {
+            switchColorScheme("Warning-theme");
+        });
+
+        // document.getElementById("Info").addEventListener("click", function() {
+        //     switchColorScheme("Info-theme");
+        // });
+    </script> 
+</body>
+
+</html>

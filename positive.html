@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>positive or negative</title>
+    <script>
+        function check(){
+            var num = document.getElementById("positive").value;
+            if(num>0){
+                res=`${num} is positive number`;
+            }
+            else if(num<0){
+                res=`${num} is negative number`;
+            }
+            else if(num==0){
+                res=`${num} is zero`;
+            }else{
+                res=`${num} is not a number`;
+            }
+            
+
+            document.getElementById('posneg').innerText=res;
+        }
+    </script>
+</head>
+<body>
+    <input type="text" id="positive">
+    <button onclick="check()">Check</button>
+    <p id="posneg"></p>
+</body>
+</html>

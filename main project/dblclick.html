@@ -1,0 +1,41 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Double click</title>
+</head>
+<body>
+    <button id="dblclick"> double click me</button>
+
+    <script>
+        const button=document.getElementById('dblclick');
+        button.addEventListener('dblclick',()=>{
+            console.log('My name is pradosh Mohanty');
+        });
+    </script>
+</body>
+</html> -->
+
+
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+  <button id="myButton">Double click me!</button>
+  <p id="result"></p>
+  <script>
+    const myButton = document.getElementById('myButton');
+    myButton.addEventListener('dblclick', () => {
+            setTimeout(()=>{
+    alert('double click is worked');
+},8000);
+     let resultElement = document.getElementById("result");
+     resultElement.innerHTML = "A double click has been performed!"
+    });
+  </script>
+</body>
+</html>
+
+

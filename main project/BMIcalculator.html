@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI calculator</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <style>
+        .form-control{
+            border: 2px solid skyblue;
+        }
+        .container{
+            margin-top: 50px;
+
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+    <div class="card text-bg-info mb-3" style="max-width: 26rem;">
+        <div class="card-header"><b>BMI calculator</b></div>
+        <div class="card-body">
+          
+    <div class="form-outline" style="width: 22rem;"> 
+        <label class="form-label" for="typeNumber">Height:</label>
+        <input min="10" max="20" type="number" id="heightInput" class="form-control" />
+        </div>
+
+        <div class="form-outline" style="width: 22rem;"> 
+            <label class="form-label" for="typeNumber">weight:</label>
+            <input min="10" max="20" type="number" id="weightInput" class="form-control" />
+    </div>
+
+    <br><br>
+    <button class="btn btn-primary" type="button" id="button">calculate</button>
+
+    <p id="result"></p>
+    <h5 class="card-title">BMI weight guide</h5>
+          <p class="card-text">
+            <ul>
+                <li>Under weight: less than 18.6</li>
+                <li>Normal range:18.6 and 24.9</li>
+                <li>Overweight:greater than 24.9</li>
+            </ul>
+          </p>
+        </div>
+      </div>
+    </div>
+    <script>
+        const button=document.querySelector('#button');
+        button.addEventListener('click',function(e){
+            e.preventDefault();
+            let height = parseInt(document.querySelector("#heightInput").value);
+            let weight = parseInt(document.querySelector("#weightInput").value);
+            let result=document.querySelector('#result');
+            if(height==="" || height <=0 || isNaN(height)){
+                result.innerHTML="Please enter a valid height";
+            }else if(weight==="" || weight <=0 || isNaN(weight)){
+                result.innerHTML="Please enter a valid weight";
+                }else{
+                    let bmi=weight/(height*height);
+                    result.innerHTML="Your BMI is "+bmi;
+            }
+        });
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>addEventListener</title>
+</head>
+<body>
+    <h2>this is the first exercise of addEventListener</h2>
+    <button id="dis">click me</button>
+    <p id="res"></p>
+    <script>
+    const button=document.getElementById('dis');
+     button.addEventListener('click', () => {
+  console.log('Button clicked!');
+  document.getElementById('res').innerText+="Button clicked!\n";
+   
+});
+
+</script>
+</body>
+</html>
